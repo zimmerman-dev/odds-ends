@@ -1,6 +1,3 @@
-# LearnCpp Chapter 4 - Section 10 If statements
-___
-
 ## 📝 Note: If Statements
 
 The `if` statement is a simple but powerful tool that introduces **conditional flow** into your programs. The idea is straightforward:
@@ -18,7 +15,7 @@ if (condition) {
 }
 ```
 
-If the *condition* of an `if` statement evaluates to the Boolean value `true`, then the *true_statement* is executed.  
+If the *condition* of an `if` statement evaluates to the Boolean value `true`, then the *true_statement* is executed.
 If the *condition* instead evaluates to `false`, then *true_statement* is skipped.
 
 ---
@@ -33,7 +30,7 @@ int main() {
   std::cin >> x;
 
   if (x == 0) {
-    std::cout << "You entered zero.\n"; 
+    std::cout << "You entered zero.\n";
   }
   return 0;
 }
@@ -174,17 +171,17 @@ int main() {
 
 ### 🧠 Flashcards
 
-**Q:** What happens if an `if` statement condition evaluates to false?  
+**Q:** What happens if an `if` statement condition evaluates to false?
 **A:** The associated true_statement block is skipped.
 
-**Q:** What is the difference between `if` and `if-else`?  
+**Q:** What is the difference between `if` and `if-else`?
 **A:** `if` checks a condition and runs a block if true; `if-else` adds a fallback if the condition is false.
 
-**Q:** Why is `else if` used?  
+**Q:** Why is `else if` used?
 **A:** To check additional conditions only if the previous `if` or `else if` fails.
 
-**Q:** Can a function that returns a `bool` be used directly in an `if` statement?  
+**Q:** Can a function that returns a `bool` be used directly in an `if` statement?
 **A:** Yes, the function's return value is used as the condition.
 
-**Q:** What is an early return?  
+**Q:** What is an early return?
 **A:** A return statement that exits the function before reaching the end of the function block.
