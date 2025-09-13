@@ -2,6 +2,7 @@
 ___
 
 ## 📝 Note: Chars
+`chars` are practically `ints` under the hood.
 
 ---
 
