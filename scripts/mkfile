@@ -1,0 +1,40 @@
+#!/bin/bash
+# mkfile - Create files (or directories) with optional dry-run and --dir support
+
+dry_run=false
+make_dir=false
+
+# Check for flags
+while [[ "$1" == --* ]]; do
+  case "$1" in
+    --dry-run) dry_run=true ;;
+    --dir) make_dir=true ;;
+    *) echo "Unknown option: $1" >&2; exit 1 ;;
+  esac
+  shift
+done
+
+# Require at least one argument
+if [[ $# -eq 0 ]]; then
+  echo "Usage: mkfile [--dry-run] [--dir] path1 [path2 ...]" >&2
+  exit 1
+fi
+
+# Main loop
+for path in "$@"; do
+  if $make_dir; then
+    if $dry_run; then
+      echo "[DRY-RUN] mkdir -p \"$path\""
+    else
+      mkdir -p "$path"
+    fi
+  else
+    dir="$(dirname "$path")"
+    if $dry_run; then
+      echo "[DRY-RUN] mkdir -p \"$dir\""
+      echo "[DRY-RUN] touch \"$path\""
+    else
+      mkdir -p "$dir" && touch "$path"
+    fi
+  fi
+done
