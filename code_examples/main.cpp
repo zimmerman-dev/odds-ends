@@ -1,14 +1,12 @@
 #include <iostream>
 
-double print(const double& x) {
-    std::cout << typeid(x).name() << '\n';
-    return x;
+void print(int x) {
+  std::cout << x << '\n';
 }
 
 int main() {
-    int num{5};
+  double num{5.5};
+  print(static_cast<int>(num));
 
-    std::cout << print(num) << '\n' << typeid(num).name();
+  return 0;
 }
-
-
