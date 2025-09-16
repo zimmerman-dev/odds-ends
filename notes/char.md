@@ -1,7 +1,3 @@
-♻️ (*MinGW, Windows11, Codelite*)  
-⌚[Insert Time]  📆 [Insert Date]  
-🔗 **Related Concepts**: #note #cpp [[Fundamental Data Types]] , [[Binary Numbers & Bit Manipulation]] , [[ASCII Table]]  
-___
 ### 📝 Note: Chars
 
 A `char` is a **fundamental integral type**, meaning it behaves like a small integer under the hood. It’s commonly used to store **character codes**, typically from the ASCII set.

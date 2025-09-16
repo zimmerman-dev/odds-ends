@@ -1,12 +1,15 @@
 #include <iostream>
 
-void print(int x) {
-  std::cout << x << '\n';
+void printSize(int x) {
+  std::cout << sizeof(x) << '\n';
 }
 
 int main() {
-  double num{5.5};
-  print(static_cast<int>(num));
+
+  int num{32};
+  printSize(num);
+
+  std::cout << sizeof(char) << '\n';
 
   return 0;
 }
