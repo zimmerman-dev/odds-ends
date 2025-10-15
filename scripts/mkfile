@@ -9,6 +9,37 @@ while [[ "$1" == --* ]]; do
   case "$1" in
     --dry-run) dry_run=true ;;
     --dir) make_dir=true ;;
+    --help)
+      cat <<EOF
+Usage: mkfile [--dry-run] [--dir] path1 [path2 ...]
+
+Create one or more files or directories, automatically creating parent paths as needed.
+
+Options:
+  --dir         Create directories instead of files (uses 'mkdir -p')
+  --dry-run     Print the commands that would be executed, but don't run them
+  --help        Show this help message and exit
+
+Examples:
+  mkfile notes/todo.txt
+      → Creates 'notes/' (if missing) and an empty file 'todo.txt'
+
+  mkfile --dir src include
+      → Creates 'src/' and 'include/' directories
+
+  mkfile --dry-run data/input.txt
+      → Prints the mkdir/touch commands without running them
+
+  mkfile --dir --dry-run build output
+      → Prints the mkdir commands that would create 'build/' and 'output/'
+
+Notes:
+  - mkfile automatically creates parent directories when making files.
+  - When using --dir, only directories are created (no files).
+  - You can pass multiple paths in a single command.
+EOF
+      exit 0
+      ;;
     *) echo "Unknown option: $1" >&2; exit 1 ;;
   esac
   shift
@@ -38,3 +69,4 @@ for path in "$@"; do
     fi
   fi
 done
+
